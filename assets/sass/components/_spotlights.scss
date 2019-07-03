@@ -1,0 +1,68 @@
+///
+/// Visualize by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Spotlights */
+
+	.spotlights {
+		margin-bottom: _size(element-margin);
+
+		.spotlight {
+			@include vendor('display', 'flex');
+			@include vendor('align-items', 'center');
+			background: _palette(bg);
+
+			.image {
+				@include vendor('align-self', 'stretch');
+				min-width: 50%;
+				margin: 0;
+
+				&.alt {
+					@include vendor('order', '2');
+				}
+
+				img {
+					object-fit: cover;
+					min-height: 100%;
+				}
+			}
+			.content {
+				min-width: 50%;
+				padding: _size(element-margin) * 2.5;
+
+				> :last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			@include breakpoint('<=medium') {
+				@include vendor('flex-direction', 'column');
+
+				.image {
+					min-width: 100%;
+
+					&.alt {
+						@include vendor('order', '1');
+					}
+				}
+
+				.content {
+					@include vendor('order', '2');
+					min-width: 100%;
+					text-align: center;
+				}
+
+				ul.actions {
+					@include vendor('justify-content','center');
+				}
+			}
+
+			@include breakpoint('<=small') {
+				.content {
+					padding: _size(element-margin);
+				}
+			}
+		}
+	}

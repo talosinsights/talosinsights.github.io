@@ -1,0 +1,46 @@
+///
+/// Visualize by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Container */
+
+	.container {
+		margin: 0 auto;
+		max-width: calc(100% - #{_size(element-margin) * 2});
+		width: _size(container-width);
+
+		&.xsmall {
+			width: (_size(container-width) * 0.25);
+		}
+
+		&.small {
+			width: (_size(container-width) * 0.5);
+		}
+
+		&.medium {
+			width: (_size(container-width) * 0.75);
+		}
+
+		&.large {
+			width: (_size(container-width) * 1.25);
+		}
+
+		&.xlarge {
+			width: (_size(container-width) * 1.5);
+		}
+
+		&.max {
+			width: 100%;
+		}
+
+		@include breakpoint('<=medium') {
+			width: 100% !important;
+			max-width: 100% !important;
+		}
+
+		@include breakpoint('<=xsmall') {
+			max-width: calc(100% - #{_size(element-margin) * 1.5});
+		}
+	}

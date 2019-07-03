@@ -1,0 +1,26 @@
+///
+/// Visualize by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Inner */
+
+	.inner {
+		margin: 0 auto;
+		max-width: 75rem;
+
+		@include breakpoint('<=xlarge') {
+			max-width: calc(100% - 6rem);
+		}
+
+		@include breakpoint('<=medium') {
+			max-width: calc(100% - 5rem);
+			width: 100%;
+		}
+
+		@include breakpoint('<=small') {
+			max-width: calc(100% - 4rem);
+			width: 100%;
+		}
+	}

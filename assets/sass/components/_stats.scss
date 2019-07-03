@@ -1,0 +1,108 @@
+///
+/// Visualize by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Stats */
+
+	.stats {
+		@include vendor('display', 'flex');
+		@include vendor('align-items', 'center');
+		@include vendor('justify-content', 'center');
+		@include vendor('flex-wrap', 'wrap');
+		margin: 0 auto _size(element-margin) auto;
+
+		> div {
+			padding: 0.5rem _size(element-margin) * 1.65;
+			text-align: center;
+			border-right: 1px solid;
+
+			&:last-child {
+				border-right: none;
+			}
+
+			.num {
+				display: block;
+				font-size: 3.25rem;
+				line-height: 3rem;
+				font-weight: _font(weight-bold);
+			}
+
+			.label {
+				display: block;
+				font-weight: _font(weight-bold);
+				font-size: 1.2rem;
+			}
+
+			@include breakpoint('<=large') {
+				padding: 0.5rem _size(element-margin) * 1.25;
+
+				.num {
+					font-size: 2.75rem;
+					line-height: 3rem;
+				}
+
+				.label {
+					font-size: 1rem;
+				}
+			}
+
+			@include breakpoint('<=medium') {
+				padding: 0.5rem _size(element-margin) / 2;
+
+				.num {
+					font-size: 2rem;
+					line-height: 3rem;
+				}
+			}
+
+			@include breakpoint('<=small') {
+				width: 100%;
+				border-right: none;
+				border-top: 1px solid;
+				padding: _size(element-margin) 0;
+
+				&:first-child {
+					border-top: none;
+					padding-top: 0;
+				}
+
+				&:last-child {
+					padding-bottom: 0;
+				}
+
+				.num {
+					font-size: 3.25rem;
+					line-height: 3rem;
+				}
+
+				.label {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+
+	@mixin color-stats($p: null) {
+		.stats {
+			> div {
+				@if $p != null {
+					border-color: _palette($p, border);
+
+					.num {
+						color: _palette($p, fg-bold);
+					}
+				}
+				@else {
+					border-color: _palette(border);
+
+					.num {
+						color: _palette(accent1);
+					}
+				}
+			}
+		}
+	}
+
+	@include color-stats;

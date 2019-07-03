@@ -1,0 +1,175 @@
+///
+/// Visualize by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Header */
+
+	$accent: invert;
+
+	@include keyframes('reveal-header') {
+		0% { top: -4em; opacity: 0; }
+		100% { top: 0; opacity: 1; }
+	}
+
+	body {
+		padding-top: 4rem;
+
+		@include breakpoint('<=medium') {
+			padding-top: 44px;
+		}
+	}
+
+	#header {
+		@include vendor('align-items', 'center');
+		@include vendor('display', 'flex');
+		@include vendor('justify-content', 'space-between');
+		background: linear-gradient(45deg, #{_palette(accent1)} 0%, #{_palette(accent1)} 50%, #{darken(_palette(accent1), 4)} 50%, #{darken(_palette(accent1), 4)} 100%);
+		box-shadow: 0px 25px 75px 0px rgba(0,0,0,0.10);
+		color: _palette($accent, fg);
+		cursor: default;
+		font-size: 1.5rem;
+		height: _size(header-height) / 1.5;
+		left: 0;
+		line-height: _size(header-height) / 1.5;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: _misc(z-index-base) + 1;
+
+		> .logo {
+			color: _palette($accent, fg-bold);
+			font-size: 1.25rem;
+			font-weight: _font(weight-bold);
+			height: inherit;
+			line-height: inherit;
+			padding-left: 1.25rem;
+			text-decoration: none;
+
+			span {
+				font-weight: _font(weight);
+			}
+		}
+
+		.label {
+			display: none;
+		}
+
+		> nav {
+			padding-right: 0;
+
+			> a {
+				color: inherit;
+				display: inline-block;
+				padding: 0 0.75rem;
+				text-decoration: none;
+
+				&:hover {
+					color: transparentize(_palette($accent, fg-bold), 0.5);
+				}
+
+				&:active {
+					background: none;
+					color: _palette($accent, fg-bold);
+				}
+
+				&[href="#menu"] {
+					@include icon(false, solid);
+					-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+					&:before {
+						content: '\f0c9';
+						margin: 0 0.5rem 0 0;
+					}
+				}
+
+				& + a[href="#menu"]:last-child {
+					border-left: solid 1px _palette($accent, border);
+					margin-left: 0.5rem;
+					padding-left: 1.25rem;
+				}
+
+				&:last-child {
+					padding-right: 1.25rem;
+				}
+
+				@include breakpoint('<=small') {
+					padding: 0 0.5rem;
+
+					& + a[href="#menu"]:last-child {
+						margin-left: 0.25rem;
+						padding-left: 1rem;
+					}
+
+					&:last-child {
+						padding-right: 1rem;
+					}
+				}
+			}
+		}
+
+		&.reveal {
+			@include vendor('animation', 'reveal-header 0.5s ease');
+
+			> .logo {
+				padding-left: 1.25rem;
+			}
+
+			> nav {
+				padding-right: 0;
+			}
+		}
+
+		&.alt {
+			@include vendor('animation', 'none');
+			background: none;
+			box-shadow: none;
+			position: absolute;
+			height: _size(header-height);
+			line-height: _size(header-height);
+
+			> .logo {
+				padding: 0 0 0 2.5rem;
+			}
+
+			> nav {
+				padding-right: 1rem;
+			}
+		}
+	}
+
+	@include breakpoint('<=medium') {
+		#header {
+			height: 44px;
+			line-height: 44px;
+		}
+	}
+
+	@include breakpoint('<=small') {
+		#header {
+			&.alt {
+				height: 44px;
+				line-height: 44px;
+
+				> .logo {
+					padding: 0 0 0 1rem;
+				}
+
+				> nav {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+
+	@include breakpoint('<=xsmall') {
+		#header {
+			min-width: 320px;
+			> .logo {
+				span {
+					display: none;
+				}
+			}
+		}
+	}

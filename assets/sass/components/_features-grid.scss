@@ -1,0 +1,129 @@
+///
+/// Visualize by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Features Grid */
+
+	.features-grid {
+		@include vendor('display','flex');
+		@include vendor('flex-wrap','wrap');
+		@include vendor('align-items','center');
+		@include vendor('justify-content','center');
+		background: _palette(bg);
+		margin: 0 auto;
+		max-width: 69rem;
+		box-shadow: 0px 25px 75px 0px rgba(0,0,0,0.10);
+
+		&.special {
+			margin-top: calc(-18rem - 1px);
+		}
+
+		.feature {
+			@include vendor('display','flex');
+			@include vendor('flex-wrap','wrap');
+			@include vendor('align-items','center');
+			@include vendor('justify-content','center');
+			@include vendor('flex-direction','column');
+			border-style: solid;
+			border-color: _palette(border);
+			border-left-width: 1px;
+			border-top-width: 1px;
+			width: 23rem;
+			height: 18rem;
+			padding: 0 _size(element-margin) * 2.5;
+			text-align: center;
+			line-height: 2;
+
+			h4 {
+				margin-bottom: _size(element-margin) * 0.35;
+			}
+
+			.icon {
+				color: _palette(accent1);
+				margin-bottom: 0.75rem;
+
+				&:before {
+					font-size: 2.25rem;
+				}
+			}
+
+			> :last-child {
+				margin-bottom: 0;
+			}
+
+			&:nth-child(3n - 2) {
+				border-left-width: 0;
+			}
+
+			&:nth-child(-n + 3) {
+				border-top-width: 0;
+			}
+		}
+
+		@include breakpoint('<=large') {
+			width: calc(100% - 6rem);
+
+			&.special {
+				margin-top: calc(-16rem - 1px);
+			}
+
+			.feature {
+				height: 16rem;
+				padding: 0 _size(element-margin) * 2;
+				width: 33.333%;
+			}
+		}
+
+		@include breakpoint('<=medium') {
+			width: calc(100% - 5rem);
+
+			.feature {
+				width: 50%;
+		
+				&:nth-child(odd) {
+					border-left-width: 0;
+				}
+
+				&:nth-child(even) {
+					border-left-width: 1px;
+				}
+
+				&:nth-child(n) {
+					border-top-width: 1px;
+				}
+
+				&:nth-child(1) {
+					border-top-width: 0;
+				}
+
+				&:nth-child(2) {
+					border-top-width: 0;
+				}
+			}
+		}
+
+		@include breakpoint('<=small') {
+			width: calc(100% - 4rem);
+
+			.feature {
+				padding: 0 _size(element-margin) * 2;
+				width: 100%;
+
+				&:nth-child(n) {
+					border-left-width: 0;
+				}
+
+				&:nth-child(2) {
+					border-top-width: 1px;
+				}
+			}
+		}
+
+		@include breakpoint('<=xsmall') {
+			.feature {
+				padding: 0 _size(element-margin);
+			}
+		}
+	}

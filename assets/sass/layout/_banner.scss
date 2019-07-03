@@ -1,0 +1,61 @@
+///
+/// Visualize by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Banner */
+
+	#banner {
+		margin-top: -4rem;
+		text-align: center;
+
+		.wrapper {
+			padding-top: 13rem;
+			padding-bottom: 25rem;
+
+			> .inner {
+				@include vendor('transition', (
+					'opacity 1s ease-in-out',
+					'transform 1s ease-in-out'
+				));
+			}
+		}
+
+		p {
+			font-size: 1.25rem;
+			margin: 0 0 0 0;
+		}
+
+		@include breakpoint('<=large') {
+			.wrapper {
+				padding-top: 10rem;
+				padding-bottom: 20rem;
+			}
+		}
+
+		@include breakpoint('<=medium') {
+			margin-top: -44px;
+		}
+
+		@include breakpoint('<=small') {
+			.wrapper {
+				padding-top: 6rem;
+				padding-bottom: 19rem;
+
+				p {
+					line-height: 1.5;
+					margin-bottom: (_size(element-margin) / 2);
+				}
+			}
+		}
+
+		body.is-preload & {
+			.wrapper {
+				> .inner {
+					@include vendor('transform', 'scale(0.99)');
+					opacity: 0;
+				}
+			}
+		}
+	}

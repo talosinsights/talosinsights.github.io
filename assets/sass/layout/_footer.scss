@@ -1,0 +1,34 @@
+///
+/// Visualize by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Footer */
+
+	#footer {
+		text-align:center;
+
+		a {
+			color: _palette(fg-light);
+
+			&:hover {
+				color: transparentize(_palette(fg-light), 0.25);
+			}
+
+			&:active {
+				color: _palette(fg-light);
+			}
+		}
+
+		ul {
+			&.icons {
+				line-height: 1;
+			}
+		}
+
+		.copyright {
+			color: _palette(fg-light);
+			margin-bottom: _size(element-margin);
+		}
+	}

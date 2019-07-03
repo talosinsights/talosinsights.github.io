@@ -1,0 +1,72 @@
+///
+/// Visualize by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Wrapper */
+
+	.wrapper {
+		@include padding(9rem, 0);
+
+		&.special {
+			padding-bottom: 0;
+
+		}
+
+		&.style1 {
+			@include color(invert);
+			background: linear-gradient(45deg, #{_palette(accent1)} 0%, #{_palette(accent1)} 50%, #{darken(_palette(accent1), 4)} 50%, #{darken(_palette(accent1), 4)} 100%);
+		}
+
+		&.style2 {
+			background: _palette(bg-alt);
+		}
+
+		&.style3 {
+
+		}
+
+		@include breakpoint('<=large') {
+			@include padding(5rem, 0);
+
+			&.alt {
+				header {
+					padding-bottom: 3rem;
+				}
+
+				footer {
+					padding-top: 5rem;
+				}
+			}
+		}
+
+		@include breakpoint('<=medium') {
+			@include padding(4rem, 0);
+
+			&.alt {
+				header {
+					padding-bottom: 2rem;
+				}
+
+				footer {
+					padding-top: 4rem;
+				}
+			}
+		}
+
+
+		@include breakpoint('<=small') {
+			@include padding(3rem, 0);
+
+			&.alt {
+				header {
+					padding-bottom: 2rem;
+				}
+
+				footer {
+					padding-top: 3rem;
+				}
+			}
+		}
+	}
