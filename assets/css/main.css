@@ -2550,7 +2550,6 @@ input, select, textarea {
 
 			.image.major img {
 				display: block;
-				max-height: 70vh;
 				width: 100%;
 			}
 
