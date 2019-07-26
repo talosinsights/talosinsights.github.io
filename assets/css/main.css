@@ -4077,3 +4077,35 @@ input, select, textarea {
 .highlight {
     color: #61c5e0;
 }
+
+
+.person {
+    text-align: center;
+}
+
+@media screen and (min-width: 1281px) {    
+    .person {
+        
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+
+    .person {   
+        width: 50%;
+    }
+
+}
+
+@media screen and (max-width: 736px) {    
+    .person {
+        width: 100%;
+    }
+}
+
+.person > img {
+    
+    width: 60%;
+    border-radius: 100%;
+}
