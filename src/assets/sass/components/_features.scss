@@ -1,0 +1,53 @@
+///
+/// Venue by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Features */
+
+	.features {
+		@include fixed-grid-base;
+		width: 100%;
+		margin-bottom: _size(element-margin);
+
+		.feature {
+			text-align: center;
+
+			> :last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		@include breakpoint('>large') {
+			@include fixed-grid-gutters(3, 4rem);
+		}
+
+		@include breakpoint('large') {
+			@include fixed-grid-gutters(3, 2rem);
+			margin-bottom: (_size(element-margin) * 2) 0;
+		}
+
+		@include breakpoint('medium') {
+			@include fixed-grid-gutters(1, 5rem);
+		}
+
+		@include breakpoint('<=medium') {
+			.feature {
+				margin: 0 auto;
+				max-width: 35rem;
+
+				&:first-child {
+					padding-top: 0;
+				}
+
+				&:last-child {
+					padding-bottom: 0;
+				}
+			}
+		}
+
+		@include breakpoint('<=small') {
+			@include fixed-grid-gutters(1, 3rem);
+		}
+	}

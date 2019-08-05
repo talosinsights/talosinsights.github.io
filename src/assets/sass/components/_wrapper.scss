@@ -1,0 +1,28 @@
+///
+/// Venue by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* wrapper */
+
+	.wrapper {
+		@include padding(6rem, 0);
+
+		&.style1 {
+			background: _palette(bg-alt);
+		}
+
+		&.style2 {
+			@include color(invert);
+			background: _palette(invert,bg-alt);
+		}
+
+		@include breakpoint('<=medium') {
+			@include padding(5rem, 0);
+		}
+
+		@include breakpoint('<=xsmall') {
+			@include padding(3rem, 0);
+		}
+	}

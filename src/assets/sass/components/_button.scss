@@ -1,0 +1,117 @@
+///
+/// Venue by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button {
+		@include vendor('appearance', 'none');
+		@include vendor('transition', (
+			'background-color #{_duration(transition)} ease-in-out',
+			'box-shadow #{_duration(transition)} ease-in-out',
+			'color #{_duration(transition)} ease-in-out'
+		));
+		border: 0;
+		border-radius: _size(border-radius);
+		cursor: pointer;
+		display: inline-block;
+		font-family: _font(family-heading);
+		font-size: 1rem;
+		font-weight: _font(weight-bold);
+		height: _size(element-height);
+		letter-spacing: 0.1rem;
+		line-height: (_size(element-height) + 0.125);
+		padding: 0 2rem 0 2rem;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		white-space: nowrap;
+
+		&.small {
+			font-size: 0.8rem;
+			height: _size(element-height) * 0.75;
+			line-height: _size(element-height) * 0.835;
+			padding: 0 1.25rem;
+		}
+
+		&.large {
+			font-size: 1.25rem;
+			height: _size(element-height) * 1.25;
+			line-height: _size(element-height) * 1.3;
+			padding: 0 4rem 0 4rem;
+		}
+
+		&.wide {
+			min-width: 13rem;
+		}
+
+		&.icon {
+			&:before {
+				margin-right: 0.5rem;
+			}
+		}
+
+		&.fit {
+			width: 100%;
+		}
+
+		&.disabled,
+		&:disabled {
+			@include vendor('pointer-events', 'none');
+			opacity: 0.25;
+		}
+
+		@include breakpoint('<=medium') {
+			&.large {
+				font-size: 1rem;
+				height: _size(element-height);
+				line-height: _size(element-height);
+				padding: 0 4rem 0 4rem;
+			}
+		}
+	}
+
+	@mixin color-button($p: null) {
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"],
+		button,
+		.button {
+			background-color: transparent;
+			box-shadow: inset 0 0 0 1px _palette($p, fg-bold);
+			color: _palette($p, fg-bold) !important;
+
+			&:hover {
+				background-color: _palette($p, border-bg);
+				box-shadow: inset 0 0 0 1px transparentize(_palette($p, fg-bold), 0.50);
+
+				&:active {
+					background-color: _palette($p, border-bg-alt);
+					box-shadow: inset 0 0 0 1px _palette($p, fg-bold);
+				}
+			}
+
+			&.primary {
+				background-color: _palette(accent);
+				box-shadow: none;
+				color: _palette(invert, fg-bold) !important;
+
+				&:hover {
+					background-color: lighten(_palette(accent), 5);
+					box-shadow: none;
+
+					&:active {
+						background-color: darken(_palette(accent), 5);
+					}
+				}
+			}
+		}
+	}
+
+	@include color-button;

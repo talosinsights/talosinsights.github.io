@@ -1,0 +1,23 @@
+{
+  "name": "landingpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss assets/sass/main.scss   assets/css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talosinsights/talosinsights.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talosinsights/talosinsights.github.io/issues"
+  },
+  "homepage": "https://github.com/talosinsights/talosinsights.github.io#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

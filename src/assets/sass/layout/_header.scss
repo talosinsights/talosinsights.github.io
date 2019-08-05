@@ -1,0 +1,106 @@
+///
+/// Venue by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Header */
+
+	$accent: invert;
+
+	body {
+		padding-top: _size(header-height);
+	}
+
+	#header {
+		@include vendor('align-items', 'center');
+		@include vendor('display', 'flex');
+		@include vendor('justify-content', 'space-between');
+		background: _palette(accent);
+		color: _palette($accent, fg);
+		cursor: default;
+		height: _size(header-height);
+		left: 0;
+		line-height: _size(header-height);
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: _misc(z-index-base) + 1;
+
+		> .logo {
+			color: _palette($accent, fg-bold);
+			font-family: _font(family-heading);
+			font-weight: _font(weight-bold);
+			letter-spacing: 0.1rem;
+			padding: 0 1.25rem;
+			text-decoration: none;
+			text-transform: uppercase;
+			margin-top: 0.125rem;
+
+			span {
+				color: transparentize(_palette($accent, fg-bold), 0.50);
+			}
+		}
+
+		> nav {
+			> a {
+				color: _palette($accent, fg-bold);
+				display: inline-block;
+				font-family: _font(family-heading);
+				font-weight: _font(weight-bold);
+				margin-top: 0.125rem;
+				padding: 0 0.75rem;
+				position: relative;
+				text-decoration: none;
+				text-transform: uppercase;
+
+				&:hover {
+					color: transparentize(_palette($accent, fg-bold),0.50);
+				}
+
+				&:active {
+					color: _palette($accent, fg-bold);
+				}
+
+				&[href="#menu"] {
+					@include icon(false, solid);
+					letter-spacing: 0.1rem;
+					padding-right: 3rem;
+
+					&:before {
+						content: '\f0c9'; // Hamburger icon;
+						display: block;
+						height: 100%;
+						line-height: inherit;
+						margin-top: -0.015rem;
+						position: absolute;
+						right: 1.5rem;
+						text-align: center;
+						top: 0;
+						width: 1rem;
+					}
+				}
+
+				@include breakpoint('<=small') {
+					padding: 0 0.5rem;
+				}
+			}
+		}
+	}
+
+	@include breakpoint('<=medium') {
+		body {
+			padding-top: 44px;
+		}
+
+		#header {
+			height: 44px;
+			line-height: 44px;
+		}
+	}
+
+	@include breakpoint('<=xsmall') {
+		#header {
+			min-width: 320px;
+		}
+	}

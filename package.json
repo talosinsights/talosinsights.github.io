@@ -1,0 +1,63 @@
+{
+  "name": "taloslandingpage",
+  "version": "2.0.0",
+  "description": "",
+  "keywords": [
+    "gatsby",
+    "Talos",
+    "Landingpage"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "prod": "gatsby serve -p 4000",
+    "dev": "gatsby build && gatsby serve -p 4000",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "onlinedev": "ngrok http 4000"
+  },
+  "dependencies": {
+    "gatsby": "^2.13.6",
+    "gatsby-background-image": "^0.8.0",
+    "gatsby-image": "^2.0.25",
+    "gatsby-plugin-manifest": "^2.0.12",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-react-helmet": "^3.0.4",
+    "gatsby-plugin-robots-txt": "^1.4.0",
+    "gatsby-plugin-sharp": "^2.2.9",
+    "gatsby-plugin-sitemap": "^2.0.10",
+    "gatsby-plugin-styled-components": "^3.1.0",
+    "gatsby-plugin-typescript": "^2.0.11",
+    "gatsby-source-filesystem": "^2.1.8",
+    "gatsby-transformer-sharp": "^2.1.9",
+    "intersection-observer": "^0.7.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0",
+    "react-icons": "^3.2.2",
+    "react-reveal": "^1.2.2",
+    "react-transition-group": "^1.2.1",
+    "rebass": "^3.0.0",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^4.1.12",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^5.10.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-compat": "^2.6.3",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prefer-object-spread": "^1.2.1",
+    "eslint-plugin-prettier": "^3.0.0",
+    "gatsby-plugin-sass": "^2.1.4",
+    "gatsby-plugin-stylus": "^2.0.3",
+    "ngrok": "^3.1.1",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.15.3"
+  }
+}

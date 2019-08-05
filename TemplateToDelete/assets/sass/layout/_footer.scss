@@ -1,0 +1,41 @@
+///
+/// Venue by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Footer */
+
+	$accent: invert;
+
+	#footer {
+		@include padding(6rem, 0);
+		background: _palette($accent, bg);
+		color: _palette($accent, fg);
+		cursor: default;
+		text-align: center;
+
+		ul {
+			&.icons {
+				margin-bottom: 0;
+			}
+		}
+
+		.copyright {
+			margin-bottom: _size(element-margin);
+		}
+
+		@include breakpoint('<=medium') {
+			@include padding(4rem, 0);
+		}
+
+		@include breakpoint('<=small') {
+			.inner {
+				padding: 0 1.5rem;
+			}
+		}
+
+		@include breakpoint('<=xsmall') {
+			@include padding(3rem, 0);
+		}
+}

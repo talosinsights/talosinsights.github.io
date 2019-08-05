@@ -1,0 +1,146 @@
+///
+/// Venue by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Banner */
+
+	#banner {
+		@include color(invert);
+		@include vendor('display', 'flex');
+		@include vendor('align-items', 'center');
+		@include vendor('justify-content', 'center');
+		background-attachment: fixed;
+		background-image: url('../../images/banner.jpg');
+		background-position: bottom left;
+		background-size: cover;
+		cursor: default;
+		height: 90vh;
+		min-height: 40rem;
+		position: relative;
+		text-align: center;
+		width: 100%;
+
+		> .inner {
+			@include vendor('transition', ( 'transform 0.75s ease-in-out', 'opacity 0.75s ease-in-out' ));
+			position:relative;
+			width: 100%;
+
+			> :last-child {
+				margin-bottom: 0;
+			}
+			
+
+			h1 , p, ul {
+				position: relative;
+			}
+
+			h1 {
+				font-size: 3.5rem;
+			}
+
+			p {
+				color: _palette(invert,fg-bold);
+				font-size: 1.5rem;
+				margin: 0 0 (_size(element-margin) * 1.5) 0;
+			}
+
+			.icon {
+				border-radius: 100%;
+				border: 1px solid _palette(invert,fg-bold);
+				color: _palette(invert,fg-bold);
+				display: block;
+				font-size: 3.5rem;
+				height: 7rem;
+				line-height: 7rem;
+				margin: 0 auto (_size(element-margin) * 1.5) auto;
+				position: relative;
+				width: 7rem;
+			}
+		}
+
+		&:before {
+			@include vendor('transition', 'opacity 1s ease-in-out');
+			@include vendor('transition-delay', '0.75s');
+			background: rgba(32,32,32,1);
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			opacity: 0.25;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+
+		body.is-preload & {
+			> .inner {
+				@include vendor('transform', 'translateY(0.75em)');
+				opacity: 0;
+			}
+
+			&:before {
+				opacity: 1;
+			}
+		}
+
+		@include breakpoint('<=medium') {
+			background-attachment: scroll;
+			height: 80vh;
+			min-height: 35rem;
+
+			> .inner {
+				margin: 0 auto;
+				max-width: 35rem;
+
+				h1 {
+					font-size: 3rem;
+				}
+
+				p {
+					font-size: 1.25rem;
+				}
+
+				.icon {
+					border-radius: 100%;
+					border: 1px solid _palette(invert,fg-bold);
+					color: _palette(invert,fg-bold);
+					display: block;
+					font-size: 3rem;
+					height: 6rem;
+					line-height: 6rem;
+					margin: 0 auto (_size(element-margin) * 1.5) auto;
+					position: relative;
+					width: 6rem;
+					z-index: _misc(z-index-base) + 11;
+				}
+			}
+		}
+
+		@include breakpoint('<=small') {
+			height: auto;
+			min-height: 38rem;
+
+			> .inner {
+				padding: 0 1.5rem;
+
+				h1 {
+					font-size: 2rem;
+					line-height: 3rem;
+				}
+
+				br {
+					display: none;
+				}
+
+				p {
+					font-size: 1rem;
+				}
+
+				.icon {
+					margin-bottom: _size(element-margin);
+				}
+			}
+		}
+	}

@@ -1,0 +1,46 @@
+///
+/// Venue by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Inner */
+
+	.inner {
+		margin: 0 auto;
+		max-width: calc(100% - 10rem);
+		width: _size(inner-width);
+
+		&.narrow {
+			width: _size(inner-width) / 1.75;
+
+			header {
+				max-width: 100%;
+				width: 100%;
+			}
+		}
+
+		@include breakpoint('<=large') {
+			max-width: calc(100% - 6rem);
+		}
+
+		@include breakpoint('<=medium') {
+			max-width: calc(100% - 4rem);
+			width: 100%;
+
+			&.narrow {
+				header {
+					max-width: 80%;
+				}
+
+				form {
+					max-width: 35rem;
+				}
+			}
+		}
+
+		@include breakpoint('<=small') {
+			width: 100%;
+			max-width: calc(100% - 1rem);
+		}
+	}
