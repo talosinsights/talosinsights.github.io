@@ -16,56 +16,113 @@
 
 // Breakpoints.
 
-	@include breakpoints((
-		default:   (1681px,   null     ),
-		xlarge:    (1281px,   1680px   ),
-		large:     (981px,    1280px   ),
-		medium:    (737px,    980px    ),
-		small:     (481px,    736px    ),
-		xsmall:    (361px,    480px    ),
-		xxsmall:   (null,     360px    )
-	));
+@include breakpoints(
+  (
+    default: (
+      1681px,
+      null
+    ),
+    xlarge: (
+      1281px,
+      1680px
+    ),
+    large: (
+      981px,
+      1280px
+    ),
+    medium: (
+      737px,
+      980px
+    ),
+    small: (
+      481px,
+      736px
+    ),
+    xsmall: (
+      361px,
+      480px
+    ),
+    xxsmall: (
+      null,
+      360px
+    )
+  )
+);
 
 // Color.
 
-	@mixin color($p) {
-		@include color-typography($p);
-		@include color-box($p);
-		@include color-button($p);
-		@include color-form($p);
-		@include color-list($p);
-		@include color-stats($p);
-		@include color-table($p);
-	}
+@mixin color($p) {
+  @include color-typography($p);
+  @include color-box($p);
+  @include color-button($p);
+  @include color-form($p);
+  @include color-list($p);
+  @include color-stats($p);
+  @include color-table($p);
+}
 
 // Base.
 
-	@import 'base/reset';
-	@import 'base/page';
-	@import 'base/typography';
+@import 'base/reset';
+@import 'base/page';
+@import 'base/typography';
 
 // Component.
 
-	@import 'components/row';
-	@import 'components/box';
-	@import 'components/button';
-	@import 'components/form';
-	@import 'components/icon';
-	@import 'components/image';
-	@import 'components/list';
-	@import 'components/actions';
-	@import 'components/icons';
-	@import 'components/stats';
-	@import 'components/table';
-	@import 'components/wrapper';
-	@import 'components/inner';
-	@import 'components/header';
-	@import 'components/features-grid';
-	@import 'components/spotlights';
+@import 'components/row';
+@import 'components/box';
+@import 'components/button';
+@import 'components/form';
+@import 'components/icon';
+@import 'components/image';
+@import 'components/list';
+@import 'components/actions';
+@import 'components/icons';
+@import 'components/stats';
+@import 'components/table';
+@import 'components/wrapper';
+@import 'components/inner';
+@import 'components/header';
+@import 'components/features-grid';
+@import 'components/spotlights';
 
 // Layout.
 
-	@import 'layout/header';
-	@import 'layout/menu';
-	@import 'layout/banner';
-	@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/menu';
+@import 'layout/banner';
+@import 'layout/footer';
+
+/* custom */
+.highlight {
+  color: #1d71b8;
+}
+
+.person {
+  text-align: center;
+  filter: grayscale(70) brightness(1.5);
+  image-rendering: pixelated;
+}
+
+@media screen and (min-width: 1281px) {
+  .person {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .person {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .person {
+    width: 100%;
+  }
+}
+
+.person > img {
+  width: 60%;
+  border-radius: 100%;
+}
