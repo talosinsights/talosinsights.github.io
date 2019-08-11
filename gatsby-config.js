@@ -19,6 +19,13 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-sass',
     {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'de',
+        useLangKeyLayout: false
+      }
+    },
+    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://www.oseven.de',
