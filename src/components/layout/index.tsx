@@ -2,6 +2,7 @@
 
 // React and Libarys
 import React from 'react'
+import { Link } from 'gatsby'
 // import { graphql } from 'gatsby'
 // import { ThemeProvider } from 'styled-components'
 // import GlobalStyle from './globalStyle'
@@ -18,13 +19,34 @@ import React from 'react'
 
 import Footer from './footer'
 
-export default class Layout extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  // }
+export default class Layout extends React.Component<
+  { any },
+  { newurl: String }
+> {
+  constructor(props) {
+    super(props)
+    this.state = {
+      newurl: ''
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const url = location.pathname
+    if (!url.includes('en')) {
+      console.log(`/en${url}`)
+      this.setState({ newurl: `/en${url}` })
+    }
+    // else {
+    //   console.log(url.replace('/en', ''))
+    //   this.setState({ newurl: url.replace('/en', '') })
+    // }
+
+    // console.log('update', prevProps)
+  }
 
   render() {
     const { children } = this.props
+
     return (
       <React.Fragment>
         <header id="header">
@@ -49,6 +71,15 @@ export default class Layout extends React.Component {
             </li>
           </ul>
         </nav>
+        <p>asdasdsssas</p>
+        <Link to="/en/page2" style={{ fontFamily: 'none' }}>
+          page en2
+        </Link>
+        <Link to="/page2" style={{ fontFamily: 'none' }}>
+          page
+        </Link>
+
+        {/* <p>{this.state.newurl}</p> */}
         <main>{children}</main>
         <Footer />
         {/* <GlobalStyle />
